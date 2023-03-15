@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h2 style="color: white;">
+        Prepare_page
+    </h2>
+    <a href="{% url 'home' %}">
+        <button type="submit">&#8592;</button>
+    </a>
+    <a href="{% url 'test_page' %}">
+        <button type="submit">Start</button>
+    </a>
+</div>
+{% endblock content %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if request.user.is_authenticated %}
+<div class="main-content__wrapper">
+    <div class="main-content__left">
+        <form class="query-form" method="GET">
+            <input class="search-query" type="text" name="search-area" value="{{search_input}}" placeholder="Input task title">
+            <input class="search-query-btn" type="submit" value="Search">
+        </form>
+        <div class="categories_list">
+            <h3 style="margin: 2%;">Categories</h3>
+            <ol>
+                <li class="category">
+                    <a class="category-link" href="">All</a>
+                </li>
+                <li class="category">
+                    <a class="category-link" href="">Category 1</a>
+                </li>
+                <li class="category">
+                    <a class="category-link" href="">Category 2</a>
+                </li>
+                <li class="category">
+                    <a class="category-link" href="">Category 3</a>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="main-content__right">
+        <div class="tests_list">
+            <div class="test_item">
+                <img style="height: 60px; width: 60px;" src="{% static 'images/user_auth.svg' %}">
+                <a href="{% url 'prepare_page' %}">
+                    <h2>Title 1</h2>
+                </a>
+            </div>
+            <div class="test_item">
+                <img style="height: 60px; width: 60px;" src="{% static 'images/user.svg' %}">
+                <h2>Title 2</h2>
+            </div>
+            <div class="test_item">
+                <img style="height: 60px; width: 60px;" src="{% static 'images/user_auth.svg' %}">
+                <h2>Title 3</h2>
+            </div>
+            <div class="test_item">
+                <img style="height: 60px; width: 60px;" src="{% static 'images/user.svg' %}">
+                <h2>Title 4</h2>
+            </div>
+            <div class="test_item">
+                <img style="height: 60px; width: 60px;" src="{% static 'images/user_auth.svg' %}">
+                <h2>Title 5</h2>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="message_wrapper">
+    <div class="auth_message-box">
+        <img style="height: 60px; width: 60px;" src="{% static 'images/user_auth.svg' %}">
+        <h2>You are not authorized on our site</h2>
+        <h3>For full access to the content, please log in or complete the registration form</h3>
+    </div>
+</div>
+{% endif %}
+{% endblock content %}

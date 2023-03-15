@@ -1,0 +1,64 @@
+.profile__wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.profile-content__wrapper{
+    width: 95%;
+    margin-top: 5vh;
+}
+
+.profile-card__wrapper,
+.complete-tests__wrapper{
+    float: left;
+    color: rgb(6,50,75);
+}
+
+.profile-card__wrapper{
+    width: 30%;
+}
+
+.complete-tests__wrapper{
+    width: 70%;
+}
+
+.profile-card,
+.complete_tests{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profile-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 0 0 5px;
+    background-color: rgb(46,209,165);
+    padding: 5%;
+}
+
+.btn-logout{
+    margin-top: 1vh;
+    width: 6vw;
+    border: none;
+    color: rgb(256, 256, 256);
+    background-color: rgb(6,50,75);
+}
+
+.complete_tests{
+    border-radius: 0 5px 5px 0;
+    background-color: rgb(237,237,237);
+}
+
+.complete_test{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw;
+    border-bottom: 2px solid rgb(6, 50, 75);
+}
+
+.profile-card-info{
+    margin: 1vh 0;
+}

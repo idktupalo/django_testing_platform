@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TestUA</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/authy.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cms_styles/main_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cms_styles/prepare_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cms_styles/test_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cms_styles/done_test.css' %}">
+</head>
+<body>
+<header>
+    <div class="header-left-content">
+        <a href="{% url 'home' %}">
+            <i class='fas fa-graduation-cap' style='font-size:36px; color: white;'></i>
+        </a>
+        <h2 class="header-title">Test<strong class="header-title-u">U</strong><strong class="header-title-a">A</strong></h2>
+    </div>
+    {% if request.user.is_authenticated %}
+    <div class="header-right-content">
+        <div class="header-right-title">{{ user.username }}</div>
+        <a href="{% url 'profile' %}">
+            <img src="{% static 'images/user.svg' %}" style="height: 40px; width: 40px;">
+        </a>
+    </div>
+    {% else %}
+    <div class="header-right-content">
+        <a href="{% url 'login' %}">
+            <button class="login-btn" type="submit">Login</button>
+        </a>
+        <a href="{% url 'registry' %}">
+            <button class="registry-btn" type="submit">Registry</button>
+        </a>
+    </div>
+    {% endif %}
+</header>
+{% block content %}
+
+{% endblock content %}
+<footer>
+    <div class="footer-content">
+        <a href="https://www.facebook.com/" target="_blank">
+           <i class='fab fa-facebook' id="facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/vrrsthg/" target="_blank">
+            <i class='fab fa-instagram' id="instagram"></i>
+        </a>
+        <a href="https://github.com/idktupalo" target="_blank">
+            <i class='fab fa-github' id="github"></i>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank">
+            <i class='fab fa-linkedin' id="linkedin"></i>
+        </a>
+    </div>
+</footer>
+</body>
+</html>

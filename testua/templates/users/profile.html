@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="profile__wrapper">
+    <div class="profile-content__wrapper">
+        <div class="profile-card__wrapper">
+            <div class="profile-card">
+                <img src="{% static 'images/user.svg' %}" style="width: 50px; height: 50px;">
+                <h2 class="profile-card-info">{{ user.username }}</h2>
+                <h3 class="profile-card-info">{{ user.email }}</h3>
+                <a href="{% url 'logout' %}">
+                    <button class="btn-logout" type="submit">Logout</button>
+                </a>
+            </div>
+        </div>
+        <div class="complete-tests__wrapper">
+            <div class="complete_tests">
+                <div class="complete_test">
+                    <h2>Test 1</h2>
+                    <h2>9/10</h2>
+                </div>
+                <div class="complete_test">
+                    <h2>Test 2</h2>
+                    <h2>7/10</h2>
+                </div>
+                <div class="complete_test">
+                    <h2>Test 3</h2>
+                    <h2>9/10</h2>
+                </div>
+                <div class="complete_test">
+                    <h2>Test 4</h2>
+                    <h2>6/10</h2>
+                </div>
+                <div class="complete_test">
+                    <h2>Test 5</h2>
+                    <h2>10/10</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

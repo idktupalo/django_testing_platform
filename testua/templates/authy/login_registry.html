@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="login-registry-wrapper">
+        <div class="login-registry_form">
+        {% if page == 'login' %}
+        <h2>Login</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="username-field">
+                <label class="username-label">Username</label>
+                <input class="form-field" type="text" name="username">
+            </div>
+            <div class="password-field">
+                <label class="password-label">Password</label>
+                <input class="form-field" type="password" name="password">
+            </div>
+            <button class="btn-submit" type="submit">&#8594;</button>
+            <p>Don't have an account ?
+                <a href="{% url 'registry' %}">Registry</a>
+            </p>
+        </form>
+        {% else %}
+        <h2>Registry</h2>
+         <form method="POST">
+             {% csrf_token %}
+             {% for field in form %}
+                <div class="registry-field">
+                    <label class="password-label">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+             {% endfor %}
+             <button class="btn-submit" type="submit">&#8594;</button>
+             <p>Already have an account ?
+                <a href="{% url 'login' %}">Login</a>
+             </p>
+         </form>
+        {% endif %}
+        </div>
+    </div>
+{% endblock content %}
